@@ -19,6 +19,7 @@
 
 .container{
     width:1200px;
+    max-width: 100vw;
     margin:0 auto;
 }
 
@@ -192,6 +193,8 @@ a{
 
   .user-image img{
     z-index:-9;
+    width: 220px;
+    right: 1em;
   }
 
   @keyframes scaleImage {
@@ -327,12 +330,12 @@ a{
 
   .project-card{
     width:90%;
-    height:550px;
-    background-image: url(./images/projects/Project1);
-    background-size: cover;
-    /* background-repeat: no-repeat; */
+    max-width: 1080px;
+    min-height:550px;
     position:relative;
     box-shadow:0px 0px 40px #1f1f1f;
+    background-size: cover;
+    background-position: center;
   }
 
   .project-card::after{
@@ -496,8 +499,8 @@ a{
     background-image: url(./images/projects/Discord.png);
   }
 
-  @media (max-width:1300px) {
-    .page-header {
+  @media (max-width:1180px) {
+     .page-header {
       padding-top: 30px;
       color: var(--bgOrange);
       text-align: center;
@@ -508,23 +511,18 @@ a{
       margin: 10px;
       gap: 60px;
     }
-    .project-card {
-      width: 100%;
-      height: 300px;
-    }
-    .project-card {
-      background-size: cover;
-      background-position: center;
+    .img{
+      object-fit: contain;
     }
     .project-content {
-      scale: 0.5;
+      scale: 0.85;
       bottom: 0;
       left: 0;
       right: 0;
       top: 0;
     }
     .project-content-left {
-      left: 0;
+      left: 0px;
     }
     .project-heading {
       font-size: 40px;
@@ -533,10 +531,7 @@ a{
     .project-sub-heading {
       width: 100%;
     }
-    #project2 {
-      margin-left: 0;
-    }
-    #project4 {
+    #project2, #project0, #project4, #project6, #project8, #project10 {
       margin-left: 0;
     }
     .project-skill-container {
@@ -549,7 +544,7 @@ a{
       display: none;
     }
     .project-card:hover .project-content {
-      scale: 0.55;
+      scale: 0.95;
     }
   }
 
@@ -714,6 +709,7 @@ footer{
   padding:1.2rem;
   justify-content: space-between;
   align-items:center;
+  width: 80%;
 }
 
 .footer-faded-text{
@@ -742,4 +738,55 @@ footer{
 .icon-wrapper{
   display:flex;
   gap:1rem;
+}
+
+@media screen and (max-width: 680px) {
+  .logo-text{
+    font-size: 14px;
+  }
+  .nav-items{
+    display: none;
+  }
+  .hero-section-right{
+    display: none;
+  }
+  .faded-text{
+    font-size: 4em;
+  }
+  .hero-section-left{
+    text-align: center;
+  }
+  .hero-section-description{
+    margin: auto;
+  }
+  .hero-section-hireme{
+    margin: auto;
+  }
+  .skill-fade-text{
+    display: none;
+  }
+  .container{
+    text-align: center;
+  }
+  .skill-container-left{
+    width: 90%;
+  }
+  .skill-container-right{
+    display: none;
+  }
+
+  .footer-faded-text{
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 580px){
+  .footer-wrapper{
+    flex-direction: column;
+  }
+  .caps{
+    font-size: 45px;
+  }
+  .skill-heading{
+    font-size: 30px;
+  }
 }
